@@ -84,7 +84,7 @@ python -m pytest tests/api/ -v
 - [x] Pytest fixtures
 - [x] API CRUD testing
 - [x] GitHub Issues and bug reporting
-- [ ] Postman API testing
+- [x] Postman API testing
 - [ ] Playwright Web UI automation
 - [ ] Page Object Model (POM)
 - [ ] CI/CD with GitHub Actions
@@ -92,3 +92,17 @@ python -m pytest tests/api/ -v
 ## Disclaimer
 
 This repository is a personal QA learning project using publicly available mock APIs. It is not an official test suite for JSONPlaceholder.
+
+
+## Postman API Testing
+
+Created a Postman collection for JSONPlaceholder API testing.
+
+- GET existing and nonexistent resources
+- POST create resource
+- PUT update resource
+- DELETE resource
+- Environment variables
+- Collection Runner: 15 tests passed
+
+[View Postman Project](postman/)
