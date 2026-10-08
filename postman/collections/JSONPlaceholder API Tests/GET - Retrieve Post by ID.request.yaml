@@ -1,0 +1,26 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/posts/1"
+method: GET
+scripts:
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Post ID is 1\", function () {\r
+
+      \    const data = pm.response.json();\r
+
+      \    pm.expect(data.id).to.eql(1);\r
+
+      });"
+    language: text/javascript
+order: 1791442402417

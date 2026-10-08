@@ -1,0 +1,61 @@
+$kind: http-request
+url: "{{baseUrl}}/posts/1"
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"id\": 1,\r
+
+    \  \"title\": \"Updated QA Post\",\r
+
+    \  \"body\": \"Updated using Postman\",\r
+
+    \  \"userId\": 1\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const data = pm.response.json();\r
+
+      \r
+
+      // Test 1: Status Code\r
+
+      pm.test(\"Status code is 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      // Test 2: Updated Title\r
+
+      pm.test(\"Title is updated\", function () {\r
+
+      \    pm.expect(data.title).to.eql(\"Updated QA Post\");\r
+
+      });\r
+
+      \r
+
+      // Test 3: Updated Body\r
+
+      pm.test(\"Body is updated\", function () {\r
+
+      \    pm.expect(data.body).to.eql(\"Updated using Postman\");\r
+
+      });\r
+
+      \r
+
+      // Test 4: Post ID\r
+
+      pm.test(\"Post ID remains 1\", function () {\r
+
+      \    pm.expect(data.id).to.eql(1);\r
+
+      });"
+    language: text/javascript
+order: 4499984577205021

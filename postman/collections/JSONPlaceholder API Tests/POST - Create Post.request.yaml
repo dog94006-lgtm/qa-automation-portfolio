@@ -1,0 +1,87 @@
+$kind: http-request
+url: "{{baseUrl}}/posts"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"QA Automation Test\",\r
+
+    \  \"body\": \"Testing POST requests with Postman\",\r
+
+    \  \"userId\": 1\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "// Test 1: HTTP Status Code\r
+
+      pm.test(\"Status code is 201\", function () {\r
+
+      \    pm.response.to.have.status(201);\r
+
+      });\r
+
+      \r
+
+      // Test 2: Response Title\r
+
+      pm.test(\"Post title is correct\", function () {\r
+
+      \    const data = pm.response.json();\r
+
+      \r
+
+      \    pm.expect(data.title).to.eql(\"QA Automation Test\");\r
+
+      });\r
+
+      \r
+
+      // Test 3: Response Body\r
+
+      pm.test(\"Post body is correct\", function () {\r
+
+      \    const data = pm.response.json();\r
+
+      \r
+
+      \    pm.expect(data.body).to.eql(\r
+
+      \        \"Testing POST requests with Postman\"\r
+
+      \    );\r
+
+      });\r
+
+      \r
+
+      // Test 4: User ID\r
+
+      pm.test(\"User ID is 1\", function () {\r
+
+      \    const data = pm.response.json();\r
+
+      \r
+
+      \    pm.expect(data.userId).to.eql(1);\r
+
+      });\r
+
+      \r
+
+      // Test 5: Generated Post ID\r
+
+      pm.test(\"Post ID exists and is an integer\", function () {\r
+
+      \    const data = pm.response.json();\r
+
+      \r
+
+      \    pm.expect(data).to.have.property(\"id\");\r
+
+      \    pm.expect(Number.isInteger(data.id)).to.be.true;\r
+
+      });"
+    language: text/javascript
+order: 4490399165302776

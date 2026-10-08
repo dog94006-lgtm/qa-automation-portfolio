@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/posts/9999"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Nonexistent post returns 404\", function () {\r
+
+      \    pm.response.to.have.status(404);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Response body is empty object\", function () {\r
+
+      \    const data = pm.response.json();\r
+
+      \    pm.expect(data).to.deep.eql({});\r
+
+      });"
+    language: text/javascript
+order: 1118389530070527

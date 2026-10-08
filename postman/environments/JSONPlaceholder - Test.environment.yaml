@@ -1,0 +1,4 @@
+name: JSONPlaceholder - Test
+values:
+  - key: baseUrl
+    value: ''
