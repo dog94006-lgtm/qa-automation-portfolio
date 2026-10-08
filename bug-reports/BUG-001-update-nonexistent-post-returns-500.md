@@ -23,17 +23,17 @@ Sending a PUT request to update a nonexistent post returns HTTP 500 Internal Ser
   "userId": 1
 }
 ```
-Expected Result
+## Expected Result
 - The API should return 404 Not Found.
 - The server should handle the nonexistent resource gracefully.
-Actual Result
+## Actual Result
 - The API returns 500 Internal Server Error.
-Error Message
+## Error Message
 TypeError: Cannot read properties of undefined (reading 'id')
 
-Severity
+## Severity
 Medium
-Priority
+## Priority
 Medium
-Status
+##Status
 Open
