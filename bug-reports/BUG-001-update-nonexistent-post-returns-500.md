@@ -24,8 +24,8 @@ Sending a PUT request to update a nonexistent post returns HTTP 500 Internal Ser
 }
 ```
 ## Expected Result
-- The API should return 404 Not Found.
-- The server should handle the nonexistent resource gracefully.
+- The API should handle nonexistent resources gracefully.
+- HTTP 404 Not Found is the proposed expected response,subject to confirmation against the API specification.
 ## Actual Result
 - The API returns 500 Internal Server Error.
 ## Error Message
@@ -37,3 +37,6 @@ Medium
 Medium
 ## Status
 Open
+
+## Related GitHub Issue
+[Issue #1 - PUT request to nonexistent post returns HTTP 500](https://github.com/dog94006-lgtm/qa-automation-portfolio/issues/1)
