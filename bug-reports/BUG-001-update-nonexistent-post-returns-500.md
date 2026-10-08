@@ -22,7 +22,7 @@ Sending a PUT request to update a nonexistent post returns HTTP 500 Internal Ser
   "body": "Updated content",
   "userId": 1
 }
-
+```
 Expected Result
 - The API should return 404 Not Found.
 - The server should handle the nonexistent resource gracefully.
