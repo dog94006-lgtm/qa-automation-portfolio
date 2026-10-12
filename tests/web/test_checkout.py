@@ -84,3 +84,17 @@ def test_checkout_success(page: Page):
 
     # E. 驗證金額是否正確相加
     assert subtotal + tax == total
+
+    # 9. 點擊 Finish
+    page.locator("[data-test='finish']").click()
+
+    # 10. 驗證訂單完成
+
+    # TODO A：驗證目前網址是 checkout-complete.html
+    expect(page).to_have_url(
+        "https://www.saucedemo.com/checkout-complete.html"
+    )
+    # TODO B：驗證 Thank you for your order! 出現在畫面上
+    expect(
+            page.get_by_text("Thank you for your order!", exact=True)
+        ).to_be_visible()
