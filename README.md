@@ -104,6 +104,21 @@ Created a Postman collection for JSONPlaceholder API testing.
 
 [View Postman Project](postman/)
 
+## Page Object Model (POM)
+
+Web UI tests are refactored using the Page Object Model
+design pattern.
+
+- LoginPage: Login interactions and locators
+- InventoryPage: Product selection and cart operations
+- CartPage: Cart item lookup and checkout navigation
+- CheckoutPage: Customer information, order summary, and checkout completion
+
+Page objects encapsulate UI interactions while test
+scripts define test data and assertions.
+
+[View Page Objects](pages/)
+
 ## Bug Investigation
 
 [Issue #1 — PUT Request to Nonexistent Post Returns HTTP 500](https://github.com/dog94006-lgtm/qa-automation-portfolio/issues/1)
@@ -166,7 +181,7 @@ python -m pytest -v --browser-channel chrome
 - [x] Postman API testing
 - [x] Playwright Web UI automation fundamentals
 - [x] Login, cart, and checkout E2E testing
-- [ ] Page Object Model (POM)
+- [x] Page Object Model (POM)
 - [ ] CI/CD with GitHub Actions
 
 ## Disclaimer
