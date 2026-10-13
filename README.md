@@ -16,6 +16,7 @@ The goal is to practice requirement analysis, test case design, API testing, neg
 - **Web UI Automation:** Playwright for Python
 - **Version Control:** Git, GitHub
 - **Defect Tracking:** GitHub Issues
+- **Test Design Pattern:** Page Object Model (POM)
 
 ## Test Coverage
 
@@ -86,6 +87,9 @@ Using Playwright with Pytest to automate browser-based testing on [SauceDemo](ht
 | [test_login_parametrize.py](tests/web/test_login_parametrize.py) | Parameterized negative login tests |
 | [test_cart.py](tests/web/test_cart.py) | Add-to-cart and cart validation |
 | [test_checkout.py](tests/web/test_checkout.py) | Complete checkout E2E automation |
+| [test_login_pom.py](tests/web/test_login_pom.py) | Login tests using POM |
+| [test_cart_pom.py](tests/web/test_cart_pom.py) | Shopping cart tests using POM |
+| [test_checkout_pom.py](tests/web/test_checkout_pom.py) | Checkout E2E tests using POM |
 
 ## Postman API Testing
 
