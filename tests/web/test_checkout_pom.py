@@ -5,16 +5,11 @@ from playwright.sync_api import Page, expect
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from pages.inventory_page import InventoryPage
-from pages.login_page import LoginPage
 
 
-def test_complete_checkout_with_pom(page: Page):
-    login_page = LoginPage(page)
-    login_page.login("standard_user", "secret_sauce")
 
-    expect(page).to_have_url(
-        "https://www.saucedemo.com/inventory.html"
-    )
+def test_checkout_success_with_pom(logged_in_page: Page):
+    page = logged_in_page
 
     inventory_page = InventoryPage(page)
     inventory_page.add_product_to_cart("Sauce Labs Backpack")
